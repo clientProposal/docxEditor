@@ -8,15 +8,18 @@ let webviewerInstance;
 WebViewer(
   {
     path: '/webviewer',
-    initialDoc: '/docx_example.docx',
+    initialDoc: '/docx_example_from_template.docx',
     licenseKey: import.meta.env.VITE_PDFTRONKEY,
     enableOfficeEditing: true,
     officeMode: 'docx'
   },
   app
 ).then(instance => {
-  webviewerInstance = instance;
+
+  console.log(instance);
+
 });
+
 
 fileInput.addEventListener('change', e => {
   const file = e.target.files[0];
